@@ -20,11 +20,6 @@ GRID = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8]
 [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]]
 
 def reduce_grid (rows, columns)
-  return_grid = []
   grid = GRID.first(rows)
-  grid.each do |x|
-    y = x.first(columns)
-    return_grid << y
-  end
-  return_grid
+  grid.collect { |x| x.first(columns) }
 end
