@@ -20,5 +20,11 @@ def rotate_and_sum(ary, lens)
   sum.max
 end
 
-ary = reduce_grid(1,20).first
-p rotate_and_sum(ary, 4)
+def sum_of_rows(ary, lens)
+  sum = []
+  ary.each { |x| sum << rotate_and_sum(x, lens) }
+  sum.max
+end
+
+ary = reduce_grid(20,20)
+p sum_of_rows(ary, 4)
