@@ -4,3 +4,21 @@ def reduce_grid (rows, columns)
   grid = GRID.first(rows)
   grid.collect { |x| x.first(columns) }
 end
+
+def rotate_and_sum(ary, lens)
+  # Finds the maximum sum of lenses on an array of integers.
+  sum = []
+  if ary.length < lens
+    puts "Error. Array must be greater than the lens."
+  elsif ary.length == lens
+    sum << ary.first(lens).reduce(:*)
+  else
+    (ary.length-lens).times do |x| 
+      sum << ary.rotate(x).first(lens).reduce(:*)
+    end
+  end
+  sum.max
+end
+
+ary = reduce_grid(1,20).first
+p rotate_and_sum(ary, 4)
