@@ -26,13 +26,17 @@ def sum_of_rows(ary, lens)
   sum.max
 end
 
+def x_y(ary)
+  rows    = ary.length
+  columns = ary.first.length
+  [rows, columns]
+end
+
 # If you want to compute the sum of columns, just transpose the rows.
 # ary.transpose
 
 ary = reduce_grid(7,7)
 # p sum_of_rows(ary, 4)
-
-
 
 # DIAGONALS UP LEFT -> DOWN RIGHT
 
