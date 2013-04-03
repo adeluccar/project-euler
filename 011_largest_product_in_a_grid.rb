@@ -26,5 +26,8 @@ def sum_of_rows(ary, lens)
   sum.max
 end
 
-ary = reduce_grid(20,20)
+# If you want to compute the sum of columns, just transpose the rows.
+# ary.transpose
+
+ary = reduce_grid(20,20).transpose
 p sum_of_rows(ary, 4)
