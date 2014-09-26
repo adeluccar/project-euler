@@ -16,4 +16,8 @@ class Numeric
       return false
     end
   end
+  def triangular?()
+    n = (self * 8) + 1
+    n.perfect_square?
+  end
 end
