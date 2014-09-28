@@ -6,3 +6,5 @@ end
 
 ary = []
 1.upto(1000) { |num| ary << num.in_strings }
+string = ary.join("")
+print string.gsub("-", "").gsub(" ","").length
