@@ -15,6 +15,12 @@ class Numeric
     when 9 then "Nine"
     end
   end
+  def thousands
+    if self / 1000 == 0 then return nil end
+    if self / 1000 != 0 then thousands = "#{(self / 1000).units} Thousand" end
+    if self % 1000 != 0 then thousands << " and " end
+    return thousands
+  end
 end
 
 ary = []
