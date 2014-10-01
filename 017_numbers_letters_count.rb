@@ -4,15 +4,15 @@ class Numeric
   end
   def units
     case self
-    when 1 then "One"
-    when 2 then "Two"
-    when 3 then "Three"
-    when 4 then "Four"
-    when 5 then "Five"
-    when 6 then "Six"
-    when 7 then "Seven"
-    when 8 then "Eight"
-    when 9 then "Nine"
+    when 1 then "one"
+    when 2 then "two"
+    when 3 then "three"
+    when 4 then "four"
+    when 5 then "five"
+    when 6 then "six"
+    when 7 then "seven"
+    when 8 then "eight"
+    when 9 then "nine"
     end
   end
   def thousands
