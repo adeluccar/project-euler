@@ -20,6 +20,11 @@ class Numeric
     if self % 1000 != 0 then thousands << " and " end
     return thousands
   end
+  def hundreds
+    if self / 100 != 0 then hundreds = "#{(self / 100).units} hundred" end
+    if self % 100 != 0 then hundreds << " and " end
+    return hundreds
+  end
 end
 
 ary = []
