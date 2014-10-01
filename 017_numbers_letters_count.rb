@@ -1,6 +1,14 @@
 class Numeric
   def in_words
-    final_string = []
+    final_string = String.new
+    transition_num = self
+    # final_string = self.units if self <= 9
+    final_string << self.thousands if self / 1000 != 0
+    transition_num = self % 1000
+    final_string << transition_num.hundreds if transition_num / 100 != 0
+    transition_num = transition_num % 100
+    final_string << transition_num.tens if transition_num != 0
+    final_string
   end
   def units
     case self
