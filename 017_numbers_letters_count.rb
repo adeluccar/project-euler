@@ -25,6 +25,41 @@ class Numeric
     if self % 100 != 0 then hundreds << " and " end
     return hundreds
   end
+  def tens
+    if self / 10 != 0 && self < 20
+      tens = case self
+             when 10 then "ten"
+             when 11 then "eleven"
+             when 12 then "twelve"
+             when 13 then "thirteen"
+             when 14 then "fourteen"
+             when 15 then "fifteen"
+             when 16 then "sixteen"
+             when 17 then "seventeen"
+             when 18 then "eighteen"
+             when 19 then "nineteen"
+             end
+    end
+    if self / 10 != 0 && self >= 20
+      tens = case self / 10
+             when 2 then "twenty"
+             when 3 then "thirty"
+             when 4 then "forty"
+             when 5 then "fifty"
+             when 6 then "sixty"
+             when 7 then "seventy"
+             when 8 then "eighty"
+             when 9 then "ninety"
+             end
+      if self > 20 && self % 10 != 0
+        tens << "-#{(self % 10).units}"
+      end
+    end
+      if self < 10 && self % 10 != 0
+        tens = self.units
+      end
+    return tens
+  end
 end
 
 ary = []
